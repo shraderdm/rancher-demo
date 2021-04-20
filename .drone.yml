@@ -1,25 +1,25 @@
----
-## ARM64 Docker Build
-kind: pipeline
-type: docker
-name: arm64-build
+# ---
+# ## ARM64 Docker Build
+# kind: pipeline
+# type: docker
+# name: arm64-build
 
-platform:
-  os: linux
-  arch: arm64
+# platform:
+#   os: linux
+#   arch: arm64
 
-steps:
+# steps:
 
-- name: build-publish  
-  image: plugins/docker
-  settings:
-    username:
-      from_secret: docker_username
-    password:
-      from_secret: docker_password
-    repo: bgulla/rancher-demo
-    auto_tag: true
-    auto_tag_suffix: drone-build-arm64
+# - name: build-publish  
+#   image: plugins/docker
+#   settings:
+#     username:
+#       from_secret: docker_username
+#     password:
+#       from_secret: docker_password
+#     repo: bgulla/rancher-demo
+#     auto_tag: true
+#     auto_tag_suffix: drone-build-arm64
 
 ---
 ## AMD64 Docker Build
@@ -61,7 +61,7 @@ steps:
     template: bgulla/rancher-demo:drone-build-ARCH
     platforms:
       - linux/amd64
-      - linux/arm
+      # - linux/arm
 depends_on:
 - amd64-build
-- arm64-build
+# - arm64-build

@@ -5,4 +5,4 @@ metadata:
   name: source-vars
 data:
   MY_NAMESPACE: rancher-demo
-  URL_HOST: rancher-demo.apps.powerninjas.net
+  URL_HOST: rancher-demo.apps.example.home
